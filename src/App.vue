@@ -10,7 +10,13 @@
         </li>
       </ol>
     </nav>
-    <router-view></router-view>
+    <transition
+      name="fade"
+      enter-active-class="animated fadeInLeft"
+      leave-active-class="animated fadeOutRight"
+    >
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -21,6 +27,7 @@ export default {
 </script>
 
 <style>
+@import "animate.css";
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -35,7 +42,7 @@ export default {
   justify-content: center;
 }
 .link {
-  color: green;
+  color: gray;
   text-decoration: none;
   font-size: 1.2em;
 }
@@ -44,6 +51,6 @@ li {
   margin: 10px;
 }
 .router-link-active {
-  color: blue;
+  color: green;
 }
 </style>
